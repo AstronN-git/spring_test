@@ -1,0 +1,7 @@
+com\openstudio\Spring_test\services\LedService.class
+com\openstudio\Spring_test\entities\Product.class
+com\openstudio\Spring_test\SpringTestApplication.class
+com\openstudio\Spring_test\services\ProductService.class
+com\openstudio\Spring_test\repositories\ProductRepository.class
+com\openstudio\Spring_test\controllers\MainController.class
+com\openstudio\Spring_test\functions\Sha256.class

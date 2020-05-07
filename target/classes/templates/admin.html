@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Admin - Java_Home Project</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="container">
+    <h1>Админ-панель</h1>
+    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#confirm">Остановить сервер</button>
+
+    <div class="modal fade" id="confirm"> <!--Модальное окно-->
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Вы уверены?</h4>
+                    <button class="close" type="button" data-dismiss="modal">&times;</button>
+                </div>
+
+                <div class="modal-body">
+                    Это действие остановит работу JavaHome на сервере и восстановить её можно будет только с сервера. Продолжить?
+                    <br> <br>
+                    <a th:href="@{'admin/stop-server/'}" class="btn btn-danger">Подтвердить</a> <button type="button" class="btn btn-info" data-dismiss="modal">Отмена</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
