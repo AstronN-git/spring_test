@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Home - Java_Home Project</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Shop</h1>
+        <span th:if="${products.size()==0}">Products list is empty</span>
+        <table class="table table-hover" th:if="${products.size()>0}">
+            <thead class="thead-light   ">
+                <tr>
+                    <th>ID</th>
+                    <th>Название</th>
+                    <th>Стоимость</th>
+                    <th></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="product : ${products}">
+                    <td th:text="${product.id}"></td>
+                    <td th:text="${product.title}"></td>
+                    <td th:text="${product.cost}"></td>
+                    <td><a class="btn btn-info" th:href="@{'/details/' + ${product.id}}">Подробнее</a></td>
+                    <td><a class="btn btn-danger" th:href="@{'/products/delete/' + ${product.id}}">Удалить</a></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
